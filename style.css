@@ -13,6 +13,7 @@ body {
     text-align: center;
 }
 
+
 #target {
     width: 200px;
     height: 200px;
@@ -20,6 +21,7 @@ body {
     border-radius: 50%;
     margin: 20px auto;
     position: relative;
+    animation: rotateTarget 3s linear infinite; /* Вращение будет продолжаться бесконечно */
 }
 
 .knife {
@@ -41,10 +43,19 @@ body {
 
 @keyframes throwAnimation {
     from {
-        bottom: -40px; /* Начинаем немного ниже нижней границы экрана, чтобы нож был не виден в начале анимации */
+        bottom: -40px;
     }
     to {
-        bottom: 160px; /* Высота цели (200px) минус часть ножа, которая должна быть видна (40px) */
+        bottom: 80px; /* Оставляем ножи втыкающимися на высоту 80px от нижней части цели */
+    }
+}
+
+@keyframes rotateTarget {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
     }
 }
 
