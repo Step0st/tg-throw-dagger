@@ -17,12 +17,14 @@ body {
 #target {
     width: 200px;
     height: 200px;
-    background-color: red;
+    background-image: url('Wood.png'); /* Укажите путь к вашему изображению */
+    background-size: cover; /* Обеспечивает покрытие всей поверхности цели */
     border-radius: 50%;
     margin: 20px auto;
     position: relative;
-    animation: rotateTarget 3s linear infinite; /* Вращение будет продолжаться бесконечно */
+    animation: rotateTarget 3s linear infinite;
 }
+
 
 .knife {
     width: 10px;
