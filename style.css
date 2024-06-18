@@ -20,8 +20,11 @@ body {
     background-image: url('Wood.png'); /* Укажите путь к вашему изображению */
     background-size: cover; /* Обеспечивает покрытие всей поверхности цели */
     border-radius: 50%;
-    margin: 20px auto;
-    position: relative;
+    margin: 0 auto; /* Центрирование */
+    position: fixed;
+    bottom: 60%; /* Установить выше, относительно низа экрана */
+    left: 50%;
+    transform: translateX(-50%);
     animation: rotateTarget 3s linear infinite;
 }
 
@@ -37,7 +40,20 @@ body {
     animation: throwAnimation 0.5s ease forwards;
 }
 
+#knife-container {
+    position: fixed; /* Фиксированное положение */
+    bottom: 100px; /* Поднять над кнопкой */
+    left: 50%; /* Центрирование */
+    transform: translateX(-50%); /* Точное центрирование */
+    width: 10px; /* Ширина контейнера равна ширине ножа */
+    height: 40px; /* Высота контейнера равна высоте ножа */
+}
+
 #throwButton {
+    position: fixed; /* Используем fixed, чтобы кнопка оставалась на одном месте */
+    bottom: 20px; /* Отступ снизу */
+    left: 50%; /* Центрирование кнопки по горизонтали */
+    transform: translateX(-50%); /* Точное центрирование */
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;

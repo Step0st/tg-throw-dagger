@@ -7,10 +7,18 @@ throwButton.addEventListener('click', throwKnife);
 function throwKnife() {
     const knife = document.createElement('div');
     knife.classList.add('knife');
-    target.appendChild(knife);
-    knives.push(knife);
+    const container = document.getElementById('knife-container');
+    if (!container.hasChildNodes()) {  // Убедимся, что старый нож убран
+        container.appendChild(knife);
+    }
+    knife.style.bottom = '0';  // Начальная позиция ножа
+    // Запуск анимации
+    setTimeout(() => {
+        knife.style.bottom = '500px';  // Предполагаем, что цель находится на высоте 500px от кнопки
+    }, 100); // Небольшая задержка перед началом анимации
     checkCollision();
 }
+
 
 
 function checkCollision() {
