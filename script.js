@@ -12,6 +12,24 @@ function throwKnife() {
     checkCollision();
 }
 
+
 function checkCollision() {
-    // Здесь добавьте логику проверки коллизий ножей
+    for (let i = 0; i < knives.length - 1; i++) {
+        for (let j = i + 1; j < knives.length; j++) {
+            if (isOverlapping(knives[i], knives[j])) {
+                console.error("Collision detected!");
+                // Обработка столкновения
+            }
+        }
+    }
 }
+
+function isOverlapping(element1, element2) {
+    const rect1 = element1.getBoundingClientRect();
+    const rect2 = element2.getBoundingClientRect();
+    return !(rect1.right < rect2.left || 
+             rect1.left > rect2.right || 
+             rect1.bottom < rect2.top || 
+             rect1.top > rect2.bottom);
+}
+

@@ -30,10 +30,20 @@ body {
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
+    animation: throwAnimation 0.5s ease forwards;
 }
 
 #throwButton {
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
+}
+
+@keyframes throwAnimation {
+    from {
+        bottom: -40px;
+    }
+    to {
+        bottom: 90%;
+    }
 }
